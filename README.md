@@ -2,7 +2,7 @@
 
 ## Overview
 
-- The primary purpose of this project is to train multiple machine learning models to determine credit risk. Then we evaluate the performance of the various models and make a recommendation on whether or not they should be used to predict credit risk. We will use RandomOverSampler, SMOTE, ClusterCentroids, SMOTEEN, BalancedRandomForestClassifier, and EasyEnsembleClassifier as our models.
+- The primary purpose of this project is to train multiple machine learning models to determine credit risk. Then we evaluate the performance of the various models and make a recommendation on whether or not they should be used to predict credit risk. We will use RandomOverSampler, SMOTE, ClusterCentroids, SMOTEENN, BalancedRandomForestClassifier, and EasyEnsembleClassifier as our models.
 
 ## Results
 What the various metrics mean:
@@ -31,7 +31,7 @@ Our Results:
   - The recall score was 0.69 for high-risk and 0.4 for low-risk
   - An image of these results can be found [here](https://github.com/azarowj/Credit_Risk_Analysis/blob/main/ClusterCentroids.png)
  
- SMOTEEN:
+ SMOTEENN:
   - The balanced accuracy score was approximately 0.67
   - The precision score was 0.01 for high-risk and 1 for low-risk
   - The recall score was 0.76 for high-risk and 0.58 for low risk
@@ -51,3 +51,5 @@ Our Results:
   
 
 ## Summary
+
+If we were basing our choice solely on balanced accuracy score, we would have an easy choice of the EasyEnsembleClassifier with the highest score of 0.93. We would also have an easy time identifying which one is the "worst" model as the ClusterCentroids with a score of 0.54. However, this does not give a comprehensive view. The RandomOverSampler, SMOTE, ClusterCentroids, and SMOTEENN modesl all have precision scores of 0.01 for high-risk and 1 for low-risk. This incredibly low precision number for high-risk means that we will have a high number of false positive results. While having false positives for high-risk would not necessarily be a bad thing as it means that the credit-lender ends up being more cautious, having a significantly high number of false positives means that the credit-lender will be losing out on good business. As a result, I would not recommend any of these four models. This leaves us with the BalancedRandomForestClassifier and EasyEnsembleClassifer Models. They have equal recall scores for low-risk. The balanced accuracy score as well as the precision scores are higher in the EasyEnsembleClassifier model. The precision score for high-risk in the BalancedRandomForestClassifier model was 0.03 and in the EasyEnsembleClassifier was 0.09. If it weren't for this low precision score, I would confidently recommend the EasyEnsembleClassifier model. We would need to know just how comfortable the credit-lender is with false positives for high-risk before making a strong determination.
