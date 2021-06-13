@@ -11,6 +11,8 @@ What the various metrics mean:
   - Recall: Ability of the classifier to find all of the positive samples. Low recall is indicative of a large number of false negatives.
  
 Our Results:
+
+
   RandomOverSampler:
   - The balanced accuracy score was approximately 0.65
   - The precision score was 0.01 for high-risk and 1 for low-risk
